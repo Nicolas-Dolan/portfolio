@@ -5,7 +5,11 @@ import './stylesheets/main.scss'
 class App extends React.Component {
   render() {
     return (
-      <h1>React Starter Pack</h1>
+      <section>
+        <h1>Nicolas Dolan: Portfolio</h1>
+        <p>Currently under construction</p>
+        <img alt="construction site" src="https://www.nicepng.com/png/detail/152-1526179_website-under-construction-png-graphic-transparent-website-under.png"/>
+      </section>
     )
   }
 }
