@@ -1,15 +1,19 @@
 {
+  "homepage": "http://Nicolas-Dolan.github.io/portfolio",
   "name": "react-starterpack",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "predeploy": "npm run build",
+"deploy": "gh-pages -d build",
     "develop": "webpack-dev-server --mode-development",
     "build": "webpack -p",
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
