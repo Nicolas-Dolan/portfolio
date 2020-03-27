@@ -2,14 +2,140 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './stylesheets/main.scss'
 
+
+
 class App extends React.Component {
+  state = {
+    textIn: 0,
+    textOut: 0,
+    forwards: true,
+    moveable: true
+  }
+
+
+  
+
+
+  componentDidMount() {
+    window.onscroll = () => this.handleScroll()
+    // setInterval(() => {
+    //   this.setState({
+    //     moveable: true
+    //   })
+    //   console.log('offset reset', window.pageYOffset)
+    // }, 3000)
+  }
+  
+  componentWillUnmount() {
+    window.onscroll = null
+  }
+
+  handleScroll(){
+    const { moveable } = this.state
+    if (window.pageYOffset === 0) {
+      if (moveable) {
+        this.moveForwards()
+        console.log('moving forwards!')
+        setTimeout(() => {
+          this.setState({
+            moveable: true
+          })
+          // console.log('timer', this.state.moveable)
+        }, 3000)
+      }
+      this.setState({ forwards: true, moveable: false })
+      // console.log('forwards=', this.state.forwards, window.pageYOffset)
+      window.scroll(0, 1)
+      
+    }
+    if (window.pageYOffset > 1) {
+      if (moveable) {
+        console.log('moving backwards!')
+        setTimeout(() => {
+          this.setState({
+            moveable: true
+          })
+          // console.log('timer', this.state.moveable)
+        }, 3000)
+      }
+      this.setState({ forwards: false, moveable: false })
+      // console.log('forwards=', this.state.forwards, window.pageYOffset)
+      window.scroll(0, 1)
+    }
+  }
+
+  moveForwards = () => {
+    const textInP = this.state.textIn
+    if (textInP === 2) {
+      this.setState({ 
+        textOut: this.state.textIn,
+        textIn: 0,
+        forwards: true
+      })
+    } else {
+      this.setState({ 
+        textOut: this.state.textIn,
+        textIn: textInP + 1,
+        forwards: true
+      })
+    }
+    console.log(this.state)
+  }
+
+  inOut(textInParam) {
+    // if (this.state.textOut !== 0) {
+    //   this.setState({ 
+    //     textOut: this.state.textIn,
+    //     direction: 'forward'
+    //   })
+    //   setTimeout(() => {
+    //     this.setState({
+    //       textIn: textInParam
+    //     })
+    //   }, 3000)
+    // } else {
+    this.setState({ 
+      textOut: this.state.textIn,
+      textIn: textInParam,
+      forwards: true
+    })
+    // }
+  }
+
+  forwards = () => {
+
+  }
+
+  handleClick1  = () => {
+    this.inOut(1)
+  }
+  handleClick2  = () => {
+    this.inOut(2)
+  }
+
   render() {
+    const { textIn, textOut, forwards } = this.state
     return (
-      <section>
-        <h1>Nicolas Dolan: Portfolio</h1>
-        <p>Currently under construction</p>
-        <img alt="construction site" src="https://www.nicepng.com/png/detail/152-1526179_website-under-construction-png-graphic-transparent-website-under.png"/>
-      </section>
+      <div id="animate-area" className="homePage">
+        <div className="centerIt">
+          <h1>Nicolas Dolan: Portfolio</h1>
+          <button onClick={this.handleClick1}>Text 1</button>
+          <button onClick={this.handleClick2}>Text 2</button>
+          <button onClick={this.forwards}>Forwards</button>
+        </div>
+        <div className="content">
+          {/* <div className={ direction !== 'start' ? text === 1 ? 'show' : 'hide' : 'wait' } style={{ backgroundColor: 'gray' }}> */}
+          <div className={ textIn === 1 ? 'showF' : textOut === 1 ? 'hideF' : 'wait' } style={{ backgroundColor: 'gray' }}>
+            <p >This is test text 1</p>
+          </div>
+          <div className={ textIn === 2 ? 'showF' : textOut === 2 ? 'hideF' : 'wait' } style={{ backgroundColor: 'gray' }}>
+            <p >This is test text 2</p>
+          </div>
+          
+        </div>
+       
+        {/* <img alt="construction site" src="https://www.nicepng.com/png/detail/152-1526179_website-under-construction-png-graphic-transparent-website-under.png"/> */}
+      </div>
     )
   }
 }

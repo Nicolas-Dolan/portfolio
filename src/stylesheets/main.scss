@@ -1,0 +1,258 @@
+@keyframes animatedBackground {
+  // from { background-position: 0 30%; }
+  // to { background-position: 1920px 30%; }
+  // from { background-position: 0 0; }
+  // to { background-position: 0 100%; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+  // 0% {
+  //   background-position: 0 50%;
+  // }
+  // 25% {
+  //   background-position: 50% 0;
+  // }
+  // 50% {
+  //   background-position: 100% 100%;
+  // }
+  // 75% {
+  //   background-position: 50% 100%;
+  // }
+  // 100% {
+  //   background-position: 0 50%;
+  // }
+  // to { transform: rotateZ(360deg);}
+}
+
+#animate-area   { 
+  width: 100%; 
+  // height: 400px; 
+  // height: 200%;
+  background-image: url('./../assets/stars.jpg');
+  // background-position: 0px 0px;
+  background-repeat: repeat;
+  animation: animatedBackground 120s linear infinite;
+}
+
+.homePage {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html, body, #root {
+  height: 100.15%;
+  margin: 0;
+  border: 0;
+  background-color: black;
+}
+
+.centerIt {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: 100%;
+  // width: 100%;
+}
+
+///////////////////////////
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.01, 0.01, 0.01);
+    transform: scale3d(0.01, 0.01, 0.01);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.01, 0.01, 0.01);
+    transform: scale3d(0.01, 0.01, 0.01);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+//////////////////////////////////
+
+@-webkit-keyframes zoomInPlus {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.01, 0.01, 0.01);
+    transform: scale3d(0.01, 0.01, 0.01);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInPlus {
+  from {
+    display: flex;
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+
+  90% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+    opacity: 0;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.zoomInPlus {
+  -webkit-animation-name: zoomInPlus;
+  animation-name: zoomInPlus;
+}
+
+//////////////////////////////
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+    // display: none;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.01, 0.01, 0.01);
+    transform: scale3d(0.01, 0.01, 0.01);
+  }
+
+  // 100% {
+  //   display: none;
+  // }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    // display: none;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.01, 0.01, 0.01);
+    transform: scale3d(0.01, 0.01, 0.01);
+  }
+
+  // 100% {
+  //   display: none;
+  // }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  // animation-fill-mode: forwards;
+}
+
+/////////////////////
+
+.content {
+  // background-color: black;
+  width: 70%;
+  height: 80%;
+  // display: flex;
+  // justify-content: flex-start;
+  position: relative;
+}
+
+.showF {
+  // display: flex;
+  animation: zoomIn 3s;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0%;  
+  left: 0%;
+}
+
+.hideB {
+  // display: none;
+  animation: zoomOut 3s;
+  animation-fill-mode: forwards;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0%;  
+  left: 0%;
+}
+
+.hideF {
+  // display: none;
+  animation: zoomInPlus 1s;
+  animation-fill-mode: forwards;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0%;  
+  left: 0%;
+}
+
+.wait {
+  display: none;
+}
