@@ -212,6 +212,70 @@ html, body, #root {
 
 /////////////////////
 
+@-webkit-keyframes zoomOutPlus {
+  from {
+    opacity: 1;
+    // display: none;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.01, 0.01, 0.01);
+    transform: scale3d(0.01, 0.01, 0.01);
+  }
+
+  // 100% {
+  //   display: none;
+  // }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes zoomOutPlus {
+  from {
+    opacity: 0;
+  }
+
+  66% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  // 100% {
+  //   display: none;
+  // }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.zoomOutPlus {
+  -webkit-animation-name: zoomOutPlus;
+  animation-name: zoomOutPlus;
+  // animation-fill-mode: forwards;
+}
+
+///////////////////////
+
 .content {
   // background-color: black;
   width: 70%;
@@ -231,6 +295,27 @@ html, body, #root {
   left: 0%;
 }
 
+.hideF {
+  // display: none;
+  animation: zoomInPlus 1s;
+  animation-fill-mode: forwards;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0%;  
+  left: 0%;
+}
+.showB {
+  // display: none;
+  animation: zoomOutPlus 3s;
+  animation-fill-mode: forwards;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0%;  
+  left: 0%;
+}
+
 .hideB {
   // display: none;
   animation: zoomOut 3s;
@@ -242,16 +327,9 @@ html, body, #root {
   left: 0%;
 }
 
-.hideF {
-  // display: none;
-  animation: zoomInPlus 1s;
-  animation-fill-mode: forwards;
-  width: 90%;
-  height: 100%;
-  position: absolute;
-  top: 0%;  
-  left: 0%;
-}
+
+
+
 
 .wait {
   display: none;

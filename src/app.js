@@ -41,7 +41,7 @@ class App extends React.Component {
             moveable: true
           })
           // console.log('timer', this.state.moveable)
-        }, 3000)
+        }, 1500)
       }
       this.setState({ forwards: true, moveable: false })
       // console.log('forwards=', this.state.forwards, window.pageYOffset)
@@ -50,13 +50,14 @@ class App extends React.Component {
     }
     if (window.pageYOffset > 1) {
       if (moveable) {
+        this.moveBackwards()
         console.log('moving backwards!')
         setTimeout(() => {
           this.setState({
             moveable: true
           })
           // console.log('timer', this.state.moveable)
-        }, 3000)
+        }, 1500)
       }
       this.setState({ forwards: false, moveable: false })
       // console.log('forwards=', this.state.forwards, window.pageYOffset)
@@ -82,6 +83,24 @@ class App extends React.Component {
     console.log(this.state)
   }
 
+  moveBackwards = () => {
+    const textInP = this.state.textIn
+    if (textInP === 0) {
+      this.setState({ 
+        textOut: this.state.textIn,
+        textIn: 2,
+        forwards: false
+      })
+    } else {
+      this.setState({ 
+        textOut: this.state.textIn,
+        textIn: textInP - 1,
+        forwards: false
+      })
+    }
+    console.log(this.state)
+  }
+
   inOut(textInParam) {
     // if (this.state.textOut !== 0) {
     //   this.setState({ 
@@ -102,9 +121,6 @@ class App extends React.Component {
     // }
   }
 
-  forwards = () => {
-
-  }
 
   handleClick1  = () => {
     this.inOut(1)
@@ -121,14 +137,16 @@ class App extends React.Component {
           <h1>Nicolas Dolan: Portfolio</h1>
           <button onClick={this.handleClick1}>Text 1</button>
           <button onClick={this.handleClick2}>Text 2</button>
-          <button onClick={this.forwards}>Forwards</button>
+          <button onClick={this.moveForwards}>Forwards</button>
+          <button onClick={this.moveBackwards}>Backwards</button>
         </div>
         <div className="content">
-          {/* <div className={ direction !== 'start' ? text === 1 ? 'show' : 'hide' : 'wait' } style={{ backgroundColor: 'gray' }}> */}
-          <div className={ textIn === 1 ? 'showF' : textOut === 1 ? 'hideF' : 'wait' } style={{ backgroundColor: 'gray' }}>
+          {/* <div className={ textIn === 1 ? 'showF' : textOut === 1 ? 'hideF' : 'wait' } style={{ backgroundColor: 'gray' }}> */}
+          <div className={ forwards ? textIn === 1 ? 'showF' : textOut === 1 ? 'hideF' : 'wait' : textIn === 1 ? 'showB' : textOut === 1 ? 'hideB' : 'wait'} style={{ backgroundColor: 'gray' }}>
             <p >This is test text 1</p>
           </div>
-          <div className={ textIn === 2 ? 'showF' : textOut === 2 ? 'hideF' : 'wait' } style={{ backgroundColor: 'gray' }}>
+          {/* <div className={ textIn === 2 ? 'showF' : textOut === 2 ? 'hideF' : 'wait' } style={{ backgroundColor: 'gray' }}> */}
+          <div className={ forwards ? textIn === 2 ? 'showF' : textOut === 2 ? 'hideF' : 'wait' : textIn === 2 ? 'showB' : textOut === 2 ? 'hideB' : 'wait'} style={{ backgroundColor: 'gray' }}>
             <p >This is test text 2</p>
           </div>
           
