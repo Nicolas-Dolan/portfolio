@@ -66,6 +66,54 @@ html, body, #root {
   // width: 100%;
 }
 
+/////////////////////////////
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+  
+    40% {
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+  
+    100% {
+      -webkit-transform: translate3d(0, 0px, 0);
+      transform: translate3d(0, 0px, 0);
+    }
+}
+
+@keyframes bounce {
+
+from {
+  -webkit-transform: translate3d(0, 0px, 0);
+  transform: translate3d(0, 0px, 0);
+}
+
+80% {
+  -webkit-transform: translate3d(0, 0px, 0);
+  transform: translate3d(0, 0px, 0);
+}
+
+93% {
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
 ///////////////////////////
 
 @-webkit-keyframes zoomIn {
@@ -109,17 +157,23 @@ html, body, #root {
 
 @-webkit-keyframes zoomInPlus {
   from {
-    opacity: 0;
-    -webkit-transform: scale3d(0.01, 0.01, 0.01);
-    transform: scale3d(0.01, 0.01, 0.01);
+    display: flex;
+    opacity: 1;
   }
 
   50% {
     opacity: 1;
   }
 
-  100% {
-    opacity: 1;
+
+  90% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+    opacity: 0;
+  }
+  to {
+    display: none;
+    opacity: 0;
   }
 }
 
@@ -155,7 +209,6 @@ html, body, #root {
 @-webkit-keyframes zoomOut {
   from {
     opacity: 1;
-    // display: none;
   }
 
   50% {
@@ -167,10 +220,6 @@ html, body, #root {
     -webkit-transform: scale3d(0.01, 0.01, 0.01);
     transform: scale3d(0.01, 0.01, 0.01);
   }
-
-  // 100% {
-  //   display: none;
-  // }
 
   to {
     opacity: 0;
@@ -181,7 +230,6 @@ html, body, #root {
 @keyframes zoomOut {
   from {
     opacity: 1;
-    // display: none;
   }
 
   50% {
@@ -193,10 +241,6 @@ html, body, #root {
     -webkit-transform: scale3d(0.01, 0.01, 0.01);
     transform: scale3d(0.01, 0.01, 0.01);
   }
-
-  // 100% {
-  //   display: none;
-  // }
 
   to {
     opacity: 0;
@@ -207,34 +251,33 @@ html, body, #root {
 .zoomOut {
   -webkit-animation-name: zoomOut;
   animation-name: zoomOut;
-  // animation-fill-mode: forwards;
 }
 
 /////////////////////
 
 @-webkit-keyframes zoomOutPlus {
   from {
-    opacity: 1;
-    // display: none;
+    opacity: 0;
   }
 
-  50% {
+  66% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+    opacity: 0;
+  }
+
+  85% {
     opacity: 1;
   }
 
   100% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.01, 0.01, 0.01);
-    transform: scale3d(0.01, 0.01, 0.01);
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 
-  // 100% {
-  //   display: none;
-  // }
-
   to {
-    opacity: 0;
-    display: none;
+    opacity: 1;
   }
 }
 
@@ -259,10 +302,6 @@ html, body, #root {
     transform: scale3d(1, 1, 1);
   }
 
-  // 100% {
-  //   display: none;
-  // }
-
   to {
     opacity: 1;
   }
@@ -271,7 +310,6 @@ html, body, #root {
 .zoomOutPlus {
   -webkit-animation-name: zoomOutPlus;
   animation-name: zoomOutPlus;
-  // animation-fill-mode: forwards;
 }
 
 ///////////////////////
@@ -328,9 +366,38 @@ html, body, #root {
 }
 
 
-
-
-
 .wait {
   display: none;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonBar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow {
+  max-height: 40px;
+}
+
+.scrollArrow {
+  max-height: 40px;
+  animation: bounce 5s linear infinite;
+}
+
+.contentPage {
+  height: 100%;
+  width: 100%;
+  // background-color: black;
+}
+
+.titlePage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
