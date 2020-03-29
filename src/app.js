@@ -20,6 +20,7 @@ class App extends React.Component {
 
   componentDidMount() {
     window.onscroll = () => this.handleScroll()
+    window.scroll(0, 1)
     setTimeout(() => {
       this.setState({
         moveable: true
@@ -239,7 +240,7 @@ class App extends React.Component {
               <p>React, JavaScript, HTML, CSS, Sass, Bulma, AJAX</p>
               <h4>Back End</h4>
               <p>Node.js, Express.js, MongoDB, Python, Django, PostgreSQL, SQL, Insomnia, TablePlus, Robo 3T</p>
-              <h3>Auxiliary</h3>
+              <h4>Auxiliary</h4>
               <p>Heroku, Git, GitHub, Command line, Mocha, Chai, Trello, npm, Yarn, Pip, Computer science fundamentals</p>
               <h3>Soft Skills</h3>
               <p>Problem solving, Attention to detail, Team work, Test-driven development, Wireframing, Initiative, Communication, Agile development, Time management, Analysis</p>
@@ -309,11 +310,13 @@ class App extends React.Component {
                   <div className={company === 1 ? '' : 'wait'}>
                     <h3>Software Engineering Immersive</h3>
                     <h4>General Assembly, London (Dec 2019 – March 2020)</h4>
+                    <hr />
                     <p>During this full-time course, I immersed myself in the world of software engineering, exploring a wide range of technologies and development methodologies. Working solo and in teams, I produced four main projects and numerous side projects. The course focused on the MERN stack, but also covered Python with Django and best practices such as test-driven development and the Agile workflow.</p>
                   </div>
                   <div className={company === 2 ? '' : 'wait'}>
                     <h3>Medical Writer</h3>
                     <h4>Syneos Health, London (July 2019 – Nov 2019)</h4>
+                    <hr />
                     <p>Wrote a wide range of scientific content for pharmaceutical and biotechnology companies, such as academic papers and educational materials.</p>
                     <p>Interpreted scientific data from a variety of sources and adapted this information according to the audience and client brief.</p>
                     <p>Cross checked, reviewed, and quality checked the work of other employees.</p>
@@ -323,11 +326,13 @@ class App extends React.Component {
                   <div className={company === 3 ? '' : 'wait'}>
                     <h3>Medical Writer</h3>
                     <h4>AS&K, London (April 2018 – July 2019)</h4>
+                    <hr />
                     <p>Similar role to that at Syneos Health (above).</p>
                   </div>
                   <div className={company === 4 ? '' : 'wait'}>
                     <h3>Assistant Editor & Senior Assistant Editor</h3>
                     <h4>The Lancet, London (Sept 2014 – March 2018)</h4>
+                    <hr />
                     <p>Edited ‘fast-track’ primary research and review material in preparation for publication in the journal, checking scientific accuracy, use of English, clarity, readability, and application of house style.</p>
                     <p>Managed multiple ongoing projects and met tight deadlines.</p>
                     <p>Created Excel spreadsheets, which automated time-consuming routine copy editing tasks such as reformatting data tables. I then shared these spreadsheets with my colleagues, saving the company hundreds of hours in labour time.</p>
@@ -335,6 +340,7 @@ class App extends React.Component {
                   <div className={company === 5 ? '' : 'wait'}>
                     <h3>BSc in Biomedical Science</h3>
                     <h4>King’s College London (2008 - 2011)</h4>
+                    <hr />
                     <p>During this degree, I selected modules mainly related to neuroscience, pharmacology, and physiology. I enjoyed the opportunity to deep-dive into the intricacies of the human body and found that the more I learned, the more my curiosity grew. I’ve maintained this interest throughout my career and, although I am not exclusively looking for health-care-related opportunities, I am very interested in continuing to work in the medical/health sector as a developer.</p>
                   </div>
                 </div>
