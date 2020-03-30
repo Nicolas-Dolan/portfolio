@@ -285,7 +285,7 @@ class App extends React.Component {
                   <p>This was a PacMan-inspired grid-based game, which I built solo in 8 days. I used vanilla JavaScript to implement complex features such as pathfinding and decision trees in addition to spending time using CSS to create a visually appealing experience.</p>
                   <a href="http://bit.ly/goblin-gold" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
-                  <a href="http://bit.ly/p1readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>              
+                  <a href="http://bit.ly/pr1readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>              
                 </div>
               </div>
             </div>
