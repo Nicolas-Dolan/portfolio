@@ -56,6 +56,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overscroll-behavior: none;
 }
 
 html, body, #root {
@@ -63,6 +64,7 @@ html, body, #root {
   margin: 0;
   border: 0;
   background-color: black;
+  overscroll-behavior: none;
 }
 
 .centerIt {
@@ -386,7 +388,7 @@ from {
 }
 
 .sideBar {
-
+margin: 0 0 0 8px;
 }
 
 .navBar {
@@ -428,6 +430,13 @@ from {
   justify-content: center;
   flex-direction: column;
   // align-items: center;
+  
+}
+
+.profile {
+  height: 185px;
+  margin: 20px;
+  border-radius: 25px;
 }
 
 .skillsPage {
@@ -435,6 +444,34 @@ from {
   // justify-content: center;
   flex-direction: column;
   // align-items: center;
+  width: 100%;
+}
+
+.twoHalves {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.half {
+  width: 45%;
+  margin: 5px 0;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+    // width: 50%;
+}
+
+.techBundle {
+  text-align: center;
+  margin: 5px;
+}
+
+.skillIcon {
+  font-size: 40px;
 }
 
 .projectsPage {
@@ -515,10 +552,13 @@ from {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  // height: 90%;
 }
 
-.companyIcon {
-  height: 80px;
+img.companyIcon {
+  display: block;
+  max-width: 100px;
+  height: auto;
 }
 
 .experienceDesc {

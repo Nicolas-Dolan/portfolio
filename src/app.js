@@ -41,7 +41,8 @@ class App extends React.Component {
 
   handleScroll(){
     const { moveable } = this.state
-    if (window.pageYOffset === 0) {
+    // if (window.pageYOffset > 1) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       if (moveable) {
         this.moveForwards()
         console.log('moving forwards!')
@@ -57,7 +58,7 @@ class App extends React.Component {
       window.scroll(0, 1)
       
     }
-    if (window.pageYOffset > 1) {
+    if (window.pageYOffset === 0) {
       if (moveable) {
         this.moveBackwards()
         console.log('moving backwards!')
@@ -69,7 +70,7 @@ class App extends React.Component {
         }, 1500)
       }
       this.setState({ forwards: false, moveable: false })
-      // console.log('forwards=', this.state.forwards, window.pageYOffset)
+      console.log('forwards=', this.state.forwards, window.pageYOffset)
       window.scroll(0, 1)
     }
   }
@@ -213,7 +214,7 @@ class App extends React.Component {
         <div className="content">
           <div className={ forwards ? textIn === 0 ? 'showF' : textOut === 0 ? 'hideF' : 'wait' : textIn === 0 ? 'showB' : textOut === 0 ? 'hideB' : 'wait'}>
             <div className="titlePage contentPage">
-              <h1>Full Stack Web Developer</h1>
+              <h1>Full-Stack Web Developer</h1>
               <div onClick={this.moveForwards}>
                 <h2>Scroll</h2>
                 <img className="scrollArrow"  alt="down arrow" src="./../assets/down-arrow.png"/>
@@ -225,25 +226,107 @@ class App extends React.Component {
           <div className={ forwards ? textIn === 1 ? 'showF' : textOut === 1 ? 'hideF' : 'wait' : textIn === 1 ? 'showB' : textOut === 1 ? 'hideB' : 'wait'}>
             <div className="aboutPage contentPage">
               <h2>About</h2>
-              <p>I am an enthusiastic and dedicated professional who is transitioning to a career in software engineering following a successful career as a medical writer and editor.  </p>
+              <div className="twoHalves">
+                <div>
+                  <p>I am an enthusiastic and dedicated professional who is transitioning to a career in software engineering following a successful career as a medical writer and editor.  </p>
 
-              <p>I have recently completed a 3-month software engineering immersive at General Assembly where I learned technical skills in full-stack web development. Additionally, I can leverage excellent problem-solving and attention-to-detail skills developed while writing and analysing complicated scientific texts in my previous roles. </p>
+                  <p>I have recently completed a 3-month software engineering immersive at General Assembly where I learned technical skills in full-stack web development. Additionally, I can leverage excellent problem-solving and attention-to-detail skills developed while writing and analysing complicated scientific texts in my previous roles. </p>
 
-              <p>I work well on my own initiative and as part of a team, and have experience managing multiple ongoing projects while working both in-house and for clients. I maintain a broad interest in science and technology, and I am keen to continue contributing in these areas through my work.</p>
+                  <p>I work well on my own initiative and as part of a team, and have experience managing multiple ongoing projects while working both in-house and for clients. I maintain a broad interest in science and technology, and I am keen to continue contributing in these areas through my work.</p>
+                </div>
+                <img className="profile" src="./../assets/profile.jpg" />
+              </div>
+              
             </div>
           </div>
           <div className={ forwards ? textIn === 2 ? 'showF' : textOut === 2 ? 'hideF' : 'wait' : textIn === 2 ? 'showB' : textOut === 2 ? 'hideB' : 'wait'}>
             <div className="skillsPage contentPage">
-              <h2>Skills</h2>
-              <h3>Technologies</h3>
-              <h4>Front End </h4>
-              <p>React, JavaScript, HTML, CSS, Sass, Bulma, AJAX</p>
-              <h4>Back End</h4>
-              <p>Node.js, Express.js, MongoDB, Python, Django, PostgreSQL, SQL, Insomnia, TablePlus, Robo 3T</p>
-              <h4>Auxiliary</h4>
-              <p>Heroku, Git, GitHub, Command line, Mocha, Chai, Trello, npm, Yarn, Pip, Computer science fundamentals</p>
-              <h3>Soft Skills</h3>
-              <p>Problem solving, Attention to detail, Team work, Test-driven development, Wireframing, Initiative, Communication, Agile development, Time management, Analysis</p>
+              <h2>Skills & Interests</h2>
+              <div className="twoHalves">
+                <div className="half">
+                  <h3>Technologies</h3>
+                  <div className="techList">
+                    <div className="techBundle">
+                      <i className="devicon-react-original skillIcon"></i>
+                      <p>React</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-javascript-plain skillIcon"></i>
+                      <p>JavaScript</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-nodejs-plain skillIcon"></i>
+                      <p>Node.js</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-express-original skillIcon"></i>
+                      <p>Express.js</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-python-plain skillIcon"></i>
+                      <p>Python</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-django-plain skillIcon"></i>
+                      <p>Django</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-postgresql-plain skillIcon"></i>
+                      <p>PostgreSQL</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-mongodb-plain skillIcon"></i>
+                      <p>MongoDB</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-html5-plain skillIcon"></i>
+                      <p>HTML5</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-css3-plain skillIcon"></i>
+                      <p> CSS3</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-sass-original skillIcon"></i>
+                      <p>Sass</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-heroku-original skillIcon"></i>
+                      <p>Heroku</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-git-plain skillIcon"></i>
+                      <p>Git</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-github-plain skillIcon"></i>
+                      <p>GitHub</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-mocha-plain skillIcon"></i>
+                      <p>Mocha</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-trello-plain skillIcon"></i>
+                      <p>Trello</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-babel-plain skillIcon"></i>
+                      <p>Babel</p>
+                    </div>
+                  </div>
+              
+                  <h3>Soft Skills</h3>
+                  <p>Problem solving | Attention to detail | Team work | Test-driven development | Wireframing | Initiative | Communication | Agile development | Time management | Analysis</p>
+                </div>
+                <div className="half">
+                  <h3>Interests</h3>
+                  <h4>Artificial Intelligence</h4>
+                  <p>I’ve become increasingly obsessed with AI, consuming every book, documentary, and seminar on the topic I can get my hands on. I’m very optimistic about the increasing benefit AI will provide to society and I would eventually like to get involved in its development directly.</p>
+                  <h4>Spanish</h4>
+                  <p>I’ve been learning Spanish for a couple of years now. The process has taught me a lot about self-directed learning – an invaluable skill when learning to code! I eventually want to travel around South America to immerse myself in the language.</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className={ forwards ? textIn === 3 ? 'showF' : textOut === 3 ? 'hideF' : 'wait' : textIn === 3 ? 'showB' : textOut === 3 ? 'hideB' : 'wait'}>
@@ -273,14 +356,14 @@ class App extends React.Component {
                   <p></p>
                   <a href="http://bit.ly/p3readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
                 </div>
-                <div className={project === 2 ? '' : 'wait'}>
+                <div className={project === 1 ? '' : 'wait'}>
                   <h2>Project 2: Geography Genius</h2>
                   <p>This was a quiz about country capitals and flags created after 2 days of pair coding with a course mate. We built it in React and used Axios requests to a third-party API called ‘Rest Countries’ to collect the quiz’s data. I wrote the majority of the logic using JavaScript while my partner focused on the visuals and animations.</p>
                   <a href="http://bit.ly/geo-genius" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p2readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
                 </div>
-                <div className={project === 1 ? '' : 'wait'}>
+                <div className={project === 2 ? '' : 'wait'}>
                   <h2>Project 1: Goblin Gold</h2>
                   <p>This was a PacMan-inspired grid-based game, which I built solo in 8 days. I used vanilla JavaScript to implement complex features such as pathfinding and decision trees in addition to spending time using CSS to create a visually appealing experience.</p>
                   <a href="http://bit.ly/goblin-gold" target="_blank" rel="noopener noreferrer">See Project</a>
