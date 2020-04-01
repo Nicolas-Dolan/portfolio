@@ -7,10 +7,6 @@ body {
 }
 
 @keyframes animatedBackground {
-  // from { background-position: 0 30%; }
-  // to { background-position: 1920px 30%; }
-  // from { background-position: 0 0; }
-  // to { background-position: 0 100%; }
   0% {
     background-position: 0 0;
   }
@@ -20,30 +16,11 @@ body {
   100% {
     background-position: 0 0;
   }
-  // 0% {
-  //   background-position: 0 50%;
-  // }
-  // 25% {
-  //   background-position: 50% 0;
-  // }
-  // 50% {
-  //   background-position: 100% 100%;
-  // }
-  // 75% {
-  //   background-position: 50% 100%;
-  // }
-  // 100% {
-  //   background-position: 0 50%;
-  // }
-  // to { transform: rotateZ(360deg);}
 }
 
 #animate-area   { 
   width: 100%; 
-  // height: 400px; 
-  // height: 200%;
   background-image: url('./../assets/stars.jpg');
-  // background-position: 0px 0px;
   background-repeat: repeat;
   animation: animatedBackground 120s linear infinite;
 }
@@ -343,11 +320,8 @@ from {
 ///////////////////////
 
 .content {
-  // background-color: black;
   width: 70%;
   height: 80%;
-  // display: flex;
-  // justify-content: flex-start;
   position: relative;
 }
 
@@ -434,6 +408,10 @@ margin: 0 0 0 8px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.centerTitle {
+  text-align: center;
 }
 
 .aboutPage {
@@ -592,4 +570,158 @@ img.companyIcon {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.mobileToggle2 {
+  display: none;
+  margin: 10px 0 0;
+}
+
+a {
+  color: white;
+}
+
+@media only screen and (max-width: 414px) {
+
+  #animate-area   { 
+    animation: animatedBackground 300s linear infinite;
+  }
+  .homePage {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .centerIt {
+    height: auto;
+  }
+
+  .sideBar {
+    margin: 0;
+    }
+
+    div.content {
+      width: 90%;
+      height: 85%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // margin: 15px;
+    }
+
+    .showF, .showB, .hideF, .hideB {
+      width: 100%;
+      justify-content: center;
+      // padding: 10px;
+    }
+
+    .buttonBar {
+      display: none;
+    }
+
+    .titlePage {
+      width: 100%;
+      margin: 0;
+    }
+
+    .twoHalves {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .profile {
+      // height: 100px;
+      // width: 50px;
+      display: none;
+  //     margin: 10px;
+  // border-radius: 15px;
+    }
+
+    .contentPage {
+      // padding: 10px;
+      // width: 93%;
+      // height: 93%;
+      width: 100%;
+      height: 100%;
+    }
+
+    h2 {
+      display: none;
+    }
+
+    .half {
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    .aboutPage {
+      justify-content: flex-start;
+    }
+
+    .mobileToggle {
+      display: none;
+    }
+
+    .mobileToggle2 {
+      display: flex;
+    }
+    div.mobileToggle2 > h3 {
+      margin: 5px;
+    }
+
+    .stone {
+      height: 50px;
+    }
+
+    .stoneCircle {
+      width: 80px;
+      height: 100px;
+      animation: rotation 10s infinite linear;
+      margin: 15px 0 0;
+    }
+
+    .projectsPage {
+      flex-direction: column;
+      // justify-content: flex-start;
+      // align-items: flex-start;
+    }
+
+    .projectDescription {
+      width: 100%;
+      // justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    h2.showHeader {
+      display: flex;
+    }
+
+    .dna {
+      display: none;
+    }
+
+    .companies {
+      flex-direction: column;
+    }
+
+    .companyList {
+      flex-direction: row;
+      align-items: center;
+      margin: 15px 0 0;
+    }
+
+    .companyIcon {
+      max-height: 40px;
+      // max-width: 40px;
+      width: auto;
+    }
+
+    img.cIcon {
+      max-width: 40px;
+      max-height: auto;
+      height: 23px;
+    }
+
+    .experienceDesc {
+      width: 100%;
+    }
 }

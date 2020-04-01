@@ -11,7 +11,8 @@ class App extends React.Component {
     forwards: true,
     moveable: false,
     project: 0,
-    company: 0
+    company: 0,
+    skill: 1
   }
 
 
@@ -191,8 +192,24 @@ class App extends React.Component {
     this.companies(5)
   }
 
+  skills(param) {
+    this.setState({ 
+      skill: param
+    })
+  }
+
+  skill1Click = () => {
+    this.skills(1)
+  }
+  skill2Click = () => {
+    this.skills(2)
+  }
+  skill3Click = () => {
+    this.skills(3)
+  }
+
   render() {
-    const { textIn, textOut, forwards, project, company } = this.state
+    const { textIn, textOut, forwards, project, company, skill } = this.state
     return (
       <div id="animate-area" className="homePage">
         <div className="centerIt sideBar">
@@ -214,9 +231,9 @@ class App extends React.Component {
         <div className="content">
           <div className={ forwards ? textIn === 0 ? 'showF' : textOut === 0 ? 'hideF' : 'wait' : textIn === 0 ? 'showB' : textOut === 0 ? 'hideB' : 'wait'}>
             <div className="titlePage contentPage">
-              <h1>Full-Stack Web Developer</h1>
+              <h1 className="centerTitle">Full-Stack Web Developer</h1>
               <div onClick={this.moveForwards}>
-                <h2>Scroll</h2>
+                <h2 className="centerTitle">Scroll</h2>
                 <img className="scrollArrow"  alt="down arrow" src="./../assets/down-arrow.png"/>
               </div>
               
@@ -241,10 +258,12 @@ class App extends React.Component {
           </div>
           <div className={ forwards ? textIn === 2 ? 'showF' : textOut === 2 ? 'hideF' : 'wait' : textIn === 2 ? 'showB' : textOut === 2 ? 'hideB' : 'wait'}>
             <div className="skillsPage contentPage">
-              <h2>Skills & Interests</h2>
+              <h2 >Skills & Interests</h2>
+              <div className="mobileToggle2"><h3 onClick={this.skill1Click} style={{  textDecoration: skill === 1 ? 'underline' : '' }}>Skills</h3><h3> | </h3><h3 onClick={this.skill2Click} style={{  textDecoration: skill === 2 ? 'underline' : '' }}>Interests</h3></div>
+              
               <div className="twoHalves">
-                <div className="half">
-                  <h3>Technologies</h3>
+                <div className={skill === 1 ? 'half' : 'mobileToggle half'}>
+                  <h3 className="mobileToggle">Technologies</h3>
                   <div className="techList">
                     <div className="techBundle">
                       <i className="devicon-react-original skillIcon"></i>
@@ -316,11 +335,11 @@ class App extends React.Component {
                     </div>
                   </div>
               
-                  <h3>Soft Skills</h3>
+                  <h3 className="mobileToggle">Soft Skills</h3>
                   <p>Problem solving | Attention to detail | Team work | Test-driven development | Wireframing | Initiative | Communication | Agile development | Time management | Analysis</p>
                 </div>
-                <div className="half">
-                  <h3>Interests</h3>
+                <div className={skill === 2 ? 'half' : 'mobileToggle half'}>
+                  <h3 className="mobileToggle" onClick={this.skill2Click}>Interests</h3>
                   <h4>Artificial Intelligence</h4>
                   <p>I’ve become increasingly obsessed with AI, consuming every book, documentary, and seminar on the topic I can get my hands on. I’m very optimistic about the increasing benefit AI will provide to society and I would eventually like to get involved in its development directly.</p>
                   <h4>Spanish</h4>
@@ -343,28 +362,28 @@ class App extends React.Component {
                   <p>Click a stone to view a project</p>
                 </div>
                 <div className={project === 4 ? '' : 'wait'}>
-                  <h2>Project 4: Pokémon Unlimited</h2>
+                  <h2 className="showHeader">Project 4: Pokémon Unlimited</h2>
                   <p>For my final project, I was allocated 1 week. I decided to work solo because I wanted to have a hand in every part of its development. Paying tribute to a franchise from my childhood, Pokémon, the project used a database to store user-created Pokémon that could then be implemented into a grid-based game. I wanted to create something that was both fun and complex, testing my abilities and drawing on everything I’d learned so far. I created the back-end database using a Python-based framework called Django and managed it with PostgreSQL. I then installed React, a JavaScript-based framework, for the front end and used Axios to make database requests. </p>
                   <a href="http://bit.ly/pkmn-unlimited" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p4readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
                 </div>
                 <div className={project === 3 ? '' : 'wait'}>
-                  <h2>Project 3: BeeHive</h2>
+                  <h2 className="showHeader">Project 3: BeeHive</h2>
                   <p>I worked in a team of four for a week to create this full-stack application. It was designed to help creatives from different specialties connect and collaborate on projects. We all contributed to the initial idea and design of the website, using wireframes to visualise it. We built the front end using React and Bulma and the back end with MongoDB, Express, and Node.js. I was involved in all parts of the website but took ownership of much of the back end and the messaging system. We used Agile methodology to distribute work, holding ‘scrums’ regularly and tracking our project on Trello.</p>
                   <a href="http://bit.ly/beehive-app" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p3readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
                 </div>
                 <div className={project === 1 ? '' : 'wait'}>
-                  <h2>Project 2: Geography Genius</h2>
+                  <h2 className="showHeader">Project 2: Geography Genius</h2>
                   <p>This was a quiz about country capitals and flags created after 2 days of pair coding with a course mate. We built it in React and used Axios requests to a third-party API called ‘Rest Countries’ to collect the quiz’s data. I wrote the majority of the logic using JavaScript while my partner focused on the visuals and animations.</p>
                   <a href="http://bit.ly/geo-genius" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p2readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
                 </div>
                 <div className={project === 2 ? '' : 'wait'}>
-                  <h2>Project 1: Goblin Gold</h2>
+                  <h2 className="showHeader">Project 1: Goblin Gold</h2>
                   <p>This was a PacMan-inspired grid-based game, which I built solo in 8 days. I used vanilla JavaScript to implement complex features such as pathfinding and decision trees in addition to spending time using CSS to create a visually appealing experience.</p>
                   <a href="http://bit.ly/goblin-gold" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
@@ -382,7 +401,7 @@ class App extends React.Component {
                 <div className="companyList">
                   <img className="companyIcon" alt="ga" src="./../assets/ga.png" onClick={this.company1Click}/>
                   <img className="companyIcon" alt="syneos" src="./../assets/syneos.png" onClick={this.company2Click}/>
-                  <img className="companyIcon" alt="ask" src="./../assets/ask.png" onClick={this.company3Click}/>
+                  <img className="companyIcon cIcon" alt="ask" src="./../assets/ask.png" onClick={this.company3Click}/>
                   <img className="companyIcon" alt="lancet" src="./../assets/lancet.png" onClick={this.company4Click}/>
                   <img className="companyIcon" alt="kcl" src="./../assets/kcl2.png" onClick={this.company5Click}/>
                 </div>
@@ -442,7 +461,7 @@ class App extends React.Component {
                   <p>LinkedIn: linkedin.com/in/nicolas-dolan/</p>
                 </div>
                 <div>
-                  <p>Location:</p>
+                  <p className="mobileToggle">Location:</p>
                   <img className="earth" alt="earth" src="./../assets/earth2.png" />
                 </div>
               </div>
