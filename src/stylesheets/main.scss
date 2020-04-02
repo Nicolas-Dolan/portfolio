@@ -198,6 +198,7 @@ from {
     transform: scale3d(4, 4, 4);
     opacity: 0;
   }
+  
   to {
     display: none;
     opacity: 0;
@@ -328,11 +329,13 @@ from {
 .showF {
   // display: flex;
   animation: zoomIn 3s;
+  // animation-fill-mode: forwards;
   width: 90%;
   height: 100%;
   position: absolute;
   top: 0%;  
   left: 0%;
+  z-index: 2;
 }
 
 .hideF {
@@ -344,16 +347,18 @@ from {
   position: absolute;
   top: 0%;  
   left: 0%;
+  z-index: 1;
 }
 .showB {
   // display: none;
   animation: zoomOutPlus 3s;
-  animation-fill-mode: forwards;
+  // animation-fill-mode: forwards;
   width: 90%;
   height: 100%;
   position: absolute;
   top: 0%;  
   left: 0%;
+  z-index: 2;
 }
 
 .hideB {
@@ -365,6 +370,8 @@ from {
   position: absolute;
   top: 0%;  
   left: 0%;
+  z-index: 1;
+
 }
 
 
