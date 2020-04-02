@@ -204,9 +204,6 @@ class App extends React.Component {
   skill2Click = () => {
     this.skills(2)
   }
-  skill3Click = () => {
-    this.skills(3)
-  }
 
   render() {
     const { textIn, textOut, forwards, project, company, skill } = this.state
