@@ -725,3 +725,55 @@ a {
       width: 100%;
     }
 }
+
+@media only screen and (max-width: 1024px) and (min-width: 415px){
+  .contentPage {
+    padding: 20px;
+    height: 100%;
+    // align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    height: 100%;
+  }
+
+  .stone {
+    height: 160px;
+  }
+
+  .stoneCircle {
+    width: 280px;
+    height: 280px;
+    margin: 120px 0;
+  }
+
+  .dna {
+    display: none;
+  }
+
+  .companies {
+    height: 700px;
+  }
+
+  .projectsPage {
+    flex-direction: column;
+    justify-content: space-around;
+    // align-items: flex-start;
+  }
+
+  .projectDescription {
+    width: 100%;
+    // justify-content: flex-start;
+    align-items: flex-start;
+    height: 60%;
+  }
+
+div.experiencePage {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: center;
+}
+  
+}
