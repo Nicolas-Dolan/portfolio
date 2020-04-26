@@ -332,8 +332,8 @@ class App extends React.Component {
                     </div>
                   </div>
               
-                  <h3 className="mobileToggle">Soft Skills</h3>
-                  <p>Problem solving | Attention to detail | Team work | Test-driven development | Wireframing | Initiative | Communication | Agile development | Time management | Analysis</p>
+                  <h3 className="mobileToggle softSkills">Soft Skills</h3>
+                  <p className="softSkills">Problem solving | Attention to detail | Team work | Test-driven development | Wireframing | Initiative | Communication | Agile development | Time management | Analysis</p>
                 </div>
                 <div className={skill === 2 ? 'half' : 'mobileToggle half'}>
                   <h3 className="mobileToggle" onClick={this.skill2Click}>Interests</h3>

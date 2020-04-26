@@ -788,3 +788,88 @@ div.experiencePage {
 }
   
 }
+@media only screen and (max-height: 800px){
+ .softSkills {
+   display: none;
+ }
+}
+@media only screen and (max-height: 800px){
+  .content {
+    transform: scale(0.95);
+  }
+  }
+
+
+@media only screen and (max-height: 640px){
+.content {
+  transform: scale(0.9);
+}
+}
+
+@media only screen and (max-height: 590px){
+  .content {
+    transform: scale(0.8);
+  }
+  }
+
+  @media only screen and (max-height: 560px){
+    .content {
+      transform: scale(0.7);
+    }
+    }
+
+    @media only screen and (max-height: 505px){
+      .content {
+        transform: scale(0.6);
+      }
+      }
+
+      @media only screen and (max-height: 405px){
+        .content {
+          transform: scale(0.45);
+        }
+        }
+
+        @media only screen and (max-height: 305px){
+          .content {
+            transform: scale(0.35);
+          }
+          }
+
+      @media only screen and (max-width: 1200px){
+        .stone {
+          height: 160px;
+        }
+      
+        .stoneCircle {
+          width: 280px;
+          height: 280px;
+          margin: 120px 0;
+        }
+        }
+
+        @media only screen and (max-height: 680px){
+          .stone {
+            height: 50px;
+          }
+      
+          .stoneCircle {
+            width: 80px;
+            height: 100px;
+            animation: rotation 10s infinite linear;
+            margin: 15px 0 0;
+          }
+          }
+
+          @media only screen and (max-height: 780px){
+            .stone {
+              height: 130px;
+            }
+        
+            .stoneCircle {
+              width: 200px;
+              height: 220px;
+              animation: rotation 10s infinite linear;
+              margin: 15px 0 0;
+            }
+            }
