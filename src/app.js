@@ -364,6 +364,8 @@ class App extends React.Component {
                   <a href="http://bit.ly/pkmn-unlimited" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p4readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
+                  <p><img className="projectImage" alt="pokemonunlimited" src="./../assets/pokemonunlimited.png" style={{ height: '280px', borderRadius: '25px', border: 'white 5px solid' }}/></p>
+                  
                 </div>
                 <div className={project === 3 ? '' : 'wait'}>
                   <h2 className="showHeader">Project 3: BeeHive</h2>
@@ -371,6 +373,7 @@ class App extends React.Component {
                   <a href="http://bit.ly/beehive-app" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p3readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
+                  <p><img className="projectImage" alt="beehive" src="./../assets/search1.png" style={{ height: '280px', borderRadius: '25px', border: 'white 5px solid' }}/></p>
                 </div>
                 <div className={project === 1 ? '' : 'wait'}>
                   <h2 className="showHeader">Project 2: Geography Genius</h2>
@@ -378,13 +381,15 @@ class App extends React.Component {
                   <a href="http://bit.ly/geo-genius" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
                   <a href="http://bit.ly/p2readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>
+                  <p><img className="projectImage" alt="geographygenius" src="./../assets/flag.png" style={{ height: '280px', borderRadius: '25px', border: 'white 5px solid' }}/></p>
                 </div>
                 <div className={project === 2 ? '' : 'wait'}>
                   <h2 className="showHeader">Project 1: Goblin Gold</h2>
                   <p>This was a PacMan-inspired grid-based game, which I built solo in 8 days. I used vanilla JavaScript to implement complex features such as pathfinding and decision trees in addition to spending time using CSS to create a visually appealing experience.</p>
                   <a href="http://bit.ly/goblin-gold" target="_blank" rel="noopener noreferrer">See Project</a>
                   <p></p>
-                  <a href="http://bit.ly/pr1readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>              
+                  <a href="http://bit.ly/pr1readme" target="_blank" rel="noopener noreferrer">See GitHub ReadMe</a>    
+                  <p><img className="projectImage" alt="goblingold" src="./../assets/goblin.png" style={{ height: '280px', borderRadius: '25px', border: 'white 5px solid' }}/></p>          
                 </div>
               </div>
             </div>

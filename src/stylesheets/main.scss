@@ -594,6 +594,10 @@ a {
 
 @media only screen and (max-width: 414px) {
 
+  .projectImage {
+    display: none;
+  }
+
   #animate-area   { 
     animation: animatedBackground 300s linear infinite;
   }
@@ -738,6 +742,11 @@ a {
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 415px){
+
+  .projectImage {
+    display: none;
+  }
+
   .contentPage {
     padding: 20px;
     height: 100%;
@@ -786,10 +795,14 @@ div.experiencePage {
   // align-items: center;
   justify-content: center;
 }
+
+// .projectImage {
+//   border-radius: 25px;
+// }
   
 }
-@media only screen and (max-height: 800px){
- .softSkills {
+@media only screen and (max-height: 750px){
+ .softSkills, .projectImage {
    display: none;
  }
 }
@@ -799,10 +812,16 @@ div.experiencePage {
   }
   }
 
+  @media only screen and (max-height: 700px){
+    .projectDescription {
+      transform: scale(0.85);
+      width: 110%;
+    }
+    }
 
 @media only screen and (max-height: 640px){
 .content {
-  transform: scale(0.9);
+  transform: scale(0.85);
 }
 }
 
@@ -873,3 +892,9 @@ div.experiencePage {
               margin: 15px 0 0;
             }
             }
+
+//             @media only screen and (max-height: 680px){
+// div.experiencePage {
+//   transform: scale(0.75)
+// }
+//             }
