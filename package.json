@@ -4,12 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
     "develop": "webpack-dev-server --mode-development",
     "build": "webpack -p",
     "start": "node index.js"
   },
+  "homepage": "https://nicolas-dolan.github.io/portfolio/",
   "dependencies": {
     "express": "^4.17.1",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
