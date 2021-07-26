@@ -461,6 +461,7 @@ class App extends React.Component {
                   <p>Email: nicolas.dolan@ymail.com</p>
                   <p><a className="noUnderline" href="https://github.com/Nicolas-Dolan" target="_blank" rel="noopener noreferrer">GitHub: github.com/Nicolas-Dolan</a></p>
                   <p><a className="noUnderline" href="https://www.linkedin.com/in/nicolas-dolan/" target="_blank" rel="noopener noreferrer">LinkedIn: linkedin.com/in/nicolas-dolan/</a></p>
+                  <p>Test</p>
                 </div>
                 <div>
                   <p className="mobileToggle">Location:</p>
