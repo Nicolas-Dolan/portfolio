@@ -191,6 +191,15 @@ class App extends React.Component {
   company5Click = () => {
     this.companies(5)
   }
+  company6Click = () => {
+    this.companies(6)
+  }
+  company7Click = () => {
+    this.companies(7)
+  }
+  company8Click = () => {
+    this.companies(8)
+  }
 
   skills(param) {
     this.setState({ 
@@ -242,11 +251,11 @@ class App extends React.Component {
               <h2>About</h2>
               <div className="twoHalves">
                 <div>
-                  <p>I am an enthusiastic and dedicated professional who is transitioning to a career in software engineering following a successful career as a medical writer and editor.  </p>
+                  <p>I am an enthusiastic and dedicated research software engineer who transitioned into full-stack development following a successful career as a medical writer and editor.</p>
 
-                  <p>I have recently completed a 3-month software engineering immersive at General Assembly where I learned technical skills in full-stack web development. Additionally, I can leverage excellent problem-solving and attention-to-detail skills developed while writing and analysing complicated scientific texts in my previous roles. </p>
+                  <p>Throughout my career, I have brought a deep passion for science and technology to all of the work I do. In my engineering role at Imperial College London, I work closely with research scientists to develop cutting-edge, open-source applications used in public health research.</p>
 
-                  <p>I work well on my own initiative and as part of a team, and have experience managing multiple ongoing projects while working both in-house and for clients. I maintain a broad interest in science and technology, and I am keen to continue contributing in these areas through my work.</p>
+                  <p>I work well on my own initiative and as part of a team, and have experience managing multiple ongoing projects while working both in-house and for clients. Additionally, I can leverage excellent problem-solving and attention-to-detail skills developed while writing and analysing complicated scientific texts in my previous roles.</p>
                 </div>
                 <img className="profile" src="./../assets/profile.jpg" />
               </div>
@@ -263,20 +272,12 @@ class App extends React.Component {
                   <h3 className="mobileToggle">Technologies</h3>
                   <div className="techList">
                     <div className="techBundle">
-                      <i className="devicon-react-original skillIcon"></i>
-                      <p>React</p>
+                      <i className="devicon-vuejs-plain skillIcon"></i>
+                      <p>Vue.js</p>
                     </div>
                     <div className="techBundle">
-                      <i className="devicon-javascript-plain skillIcon"></i>
-                      <p>JavaScript</p>
-                    </div>
-                    <div className="techBundle">
-                      <i className="devicon-nodejs-plain skillIcon"></i>
-                      <p>Node.js</p>
-                    </div>
-                    <div className="techBundle">
-                      <i className="devicon-express-original skillIcon"></i>
-                      <p>Express.js</p>
+                      <i className="devicon-typescript-plain skillIcon"></i>
+                      <p>TypeScript</p>
                     </div>
                     <div className="techBundle">
                       <i className="devicon-python-plain skillIcon"></i>
@@ -291,6 +292,38 @@ class App extends React.Component {
                       <p>PostgreSQL</p>
                     </div>
                     <div className="techBundle">
+                      <i className="devicon-react-original skillIcon"></i>
+                      <p>React</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-javascript-plain skillIcon"></i>
+                      <p>JavaScript</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-bootstrap-plain skillIcon"></i>
+                      <p>Bootstrap</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-kotlin-plain skillIcon"></i>
+                      <p>Kotlin</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-spring-plain skillIcon"></i>
+                      <p>Spring Boot</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-docker-plain skillIcon"></i>
+                      <p>Docker</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-nodejs-plain skillIcon"></i>
+                      <p>Node.js</p>
+                    </div>
+                    <div className="techBundle">
+                      <i className="devicon-express-original skillIcon"></i>
+                      <p>Express.js</p>
+                    </div>
+                    <div className="techBundle">
                       <i className="devicon-mongodb-plain skillIcon"></i>
                       <p>MongoDB</p>
                     </div>
@@ -303,32 +336,12 @@ class App extends React.Component {
                       <p> CSS3</p>
                     </div>
                     <div className="techBundle">
-                      <i className="devicon-sass-original skillIcon"></i>
-                      <p>Sass</p>
-                    </div>
-                    <div className="techBundle">
-                      <i className="devicon-heroku-original skillIcon"></i>
-                      <p>Heroku</p>
-                    </div>
-                    <div className="techBundle">
                       <i className="devicon-git-plain skillIcon"></i>
                       <p>Git</p>
                     </div>
                     <div className="techBundle">
                       <i className="devicon-github-plain skillIcon"></i>
                       <p>GitHub</p>
-                    </div>
-                    <div className="techBundle">
-                      <i className="devicon-mocha-plain skillIcon"></i>
-                      <p>Mocha</p>
-                    </div>
-                    <div className="techBundle">
-                      <i className="devicon-trello-plain skillIcon"></i>
-                      <p>Trello</p>
-                    </div>
-                    <div className="techBundle">
-                      <i className="devicon-babel-plain skillIcon"></i>
-                      <p>Babel</p>
                     </div>
                   </div>
               
@@ -401,6 +414,7 @@ class App extends React.Component {
                 <div className="dnaContainer"><img className="dna" alt="dna" src="./../assets/dna7.png" /></div>
                 
                 <div className="companyList">
+                  <img className="companyIcon" alt="icl" src="./../assets/icl.png" onClick={this.company6Click}/>
                   <img className="companyIcon" alt="ga" src="./../assets/ga.png" onClick={this.company1Click}/>
                   <img className="companyIcon" alt="syneos" src="./../assets/syneos.png" onClick={this.company2Click}/>
                   <img className="companyIcon cIcon" alt="ask" src="./../assets/ask.png" onClick={this.company3Click}/>
@@ -410,6 +424,33 @@ class App extends React.Component {
                 <div className="experienceDesc">
                   <div className={company === 0 ? '' : 'wait'}>
                     <p>Click an icon to see details</p>
+                  </div>
+                  <div className={company === 6 ? '' : 'wait'}>
+                    <h3>Research Software Engineer</h3>
+                    <h4>Imperial College London (June 2020 – Present)</h4>
+                    <hr />
+                    <p>Within the RESIDE group at ICL, I develop several open-source applications used in public health research. Typically, these applications contain statistical models used by ministries of health around the world to inform healthcare policy for diseases such as HIV, malaria, and COVID-19.</p>
+                    <p>I primarily develop the web interfaces for these applications, contributing modular, maintainable code to both the front and back end via continuous integration. I also ensure all code is fully covered by unit, integration, and Selenium tests throughout development. My team works in an Agile manner and I regularly give and receive code reviews.</p>
+                    <p>Click below to see some of the applications I contribute to:</p>
+                    <ul>
+                      <li onClick={this.company7Click}>Naomi</li>
+                      <li onClick={this.company8Click}>OrderlyWeb</li>
+                    </ul>
+                  </div>
+                  <div className={company === 7 ? '' : 'wait'}>
+                    <h3>Naomi</h3>
+                    <h4>https://reside-ic.github.io/projects/naomi/</h4>
+                    <hr />
+                    <p>Developed on behalf of UNAIDS, Naomi is a web interface for a model estimating various HIV epidemic indicators at a regional level. The application is used by teams of health officials from sub-Saharan African countries to inform HIV programme targets. It is comprised of an HIV model wrapped by an R API, a Spring Boot/Kotlin web server, and Vue/TypeScript front end.</p>
+                    <p onClick={this.company6Click}>Back</p>
+                  </div>
+
+                  <div className={company === 8 ? '' : 'wait'}>
+                    <h3>OrderlyWeb</h3>
+                    <h4>https://github.com/vimc/OrderlyWeb</h4>
+                    <hr />
+                    <p>A web interface that helps researchers who are running statistical models maintain reproducibility in their reporting. The application makes it straightforward to associate analyses with their inputs, version outputs, and organise and distribute everything with a user-friendly front end. It consists of a Spring Boot/Kotlin web server and Vue/TypeScript front end, and interacts with an R package called Orderly.</p>
+                    <p onClick={this.company6Click}>Back</p>
                   </div>
                   <div className={company === 1 ? '' : 'wait'}>
                     <h3>Software Engineering Immersive</h3>
@@ -461,7 +502,6 @@ class App extends React.Component {
                   <p>Email: nicolas.dolan@ymail.com</p>
                   <p><a className="noUnderline" href="https://github.com/Nicolas-Dolan" target="_blank" rel="noopener noreferrer">GitHub: github.com/Nicolas-Dolan</a></p>
                   <p><a className="noUnderline" href="https://www.linkedin.com/in/nicolas-dolan/" target="_blank" rel="noopener noreferrer">LinkedIn: linkedin.com/in/nicolas-dolan/</a></p>
-                  <p>Test</p>
                 </div>
                 <div>
                   <p className="mobileToggle">Location:</p>
