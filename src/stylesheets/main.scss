@@ -553,7 +553,7 @@ margin: 0 0 0 8px;
 
 img.companyIcon {
   display: block;
-  max-width: 100px;
+  max-width: 90px;
   height: auto;
 }
 
@@ -892,6 +892,76 @@ div.experiencePage {
               margin: 15px 0 0;
             }
             }
+
+            // These scale the whole page:
+            @media only screen and (min-width: 1528px){
+              #root {
+                zoom: 110%
+              }
+              }
+
+              @media only screen and (min-width: 1724px){
+                #root {
+                  zoom: 120%
+                }
+                }
+
+              @media only screen and (min-width: 1920px){
+                #root {
+                  zoom: 130%
+                }
+                }
+
+                @media only screen and (min-width: 2116px){
+                  #root {
+                    zoom: 140%
+                  }
+                  }
+
+                  @media only screen and (min-width: 2312px){
+                    #root {
+                      zoom: 150%
+                    }
+                    }
+
+                    @media only screen and (min-width: 2508px){
+                      #root {
+                        zoom: 160%
+                      }
+                      }
+
+                      @media only screen and (min-width: 2704px){
+                        #root {
+                          zoom: 170%
+                        }
+                        }
+                        @media only screen and (min-width: 2900px){
+                          #root {
+                            zoom: 180%
+                          }
+                          }
+                          @media only screen and (min-width: 3096px){
+                            #root {
+                              zoom: 190%
+                            }
+                            }
+                            @media only screen and (min-width: 3292px){
+                              #root {
+                                zoom: 200%
+                              }
+                              }
+
+                              @media only screen and (min-width: 3488px){
+                                #root {
+                                  zoom: 210%
+                                }
+                                }
+
+                                @media only screen and (min-width: 3684px){
+                                  #root {
+                                    zoom: 220%
+                                  }
+                                  }
 
 //             @media only screen and (max-height: 680px){
 // div.experiencePage {
