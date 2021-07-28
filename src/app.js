@@ -432,25 +432,27 @@ class App extends React.Component {
                     <p>Within the RESIDE group at ICL, I develop several open-source applications used in public health research. Typically, these applications contain statistical models used by ministries of health around the world to inform healthcare policy for diseases such as HIV, malaria, and COVID-19.</p>
                     <p>I primarily develop the web interfaces for these applications, contributing modular, maintainable code to both the front and back end via continuous integration. I also ensure all code is fully covered by unit, integration, and Selenium tests throughout development. My team works in an Agile manner and I regularly give and receive code reviews.</p>
                     <p>Click below to see some of the applications I contribute to:</p>
-                    <ul>
-                      <li onClick={this.company7Click}>Naomi</li>
-                      <li onClick={this.company8Click}>OrderlyWeb</li>
-                    </ul>
+                    <p></p>
+                    <p onClick={this.company7Click} className="underlineHere">Naomi</p>
+                    <p></p>
+                    <p onClick={this.company8Click} className="underlineHere">OrderlyWeb</p>
                   </div>
                   <div className={company === 7 ? '' : 'wait'}>
                     <h3>Naomi</h3>
-                    <h4>https://reside-ic.github.io/projects/naomi/</h4>
+                    <h4><a href="https://reside-ic.github.io/projects/naomi/" target="_blank" rel="noopener noreferrer">https://reside-ic.github.io/projects/naomi/</a></h4>
                     <hr />
                     <p>Developed on behalf of UNAIDS, Naomi is a web interface for a model estimating various HIV epidemic indicators at a regional level. The application is used by teams of health officials from sub-Saharan African countries to inform HIV programme targets. It is comprised of an HIV model wrapped by an R API, a Spring Boot/Kotlin web server, and Vue/TypeScript front end.</p>
-                    <p onClick={this.company6Click}>Back</p>
+                    <p><img className="projectImage" alt="naomi" src="./../assets/naomi.jpeg" style={{ height: '280px', borderRadius: '25px', border: 'white 5px solid' }}/></p>
+                    <p onClick={this.company6Click} className="underlineHere">Back</p>
                   </div>
 
                   <div className={company === 8 ? '' : 'wait'}>
                     <h3>OrderlyWeb</h3>
-                    <h4>https://github.com/vimc/OrderlyWeb</h4>
+                    <h4><a href="https://github.com/vimc/OrderlyWeb" target="_blank" rel="noopener noreferrer">https://github.com/vimc/OrderlyWeb</a></h4>
                     <hr />
                     <p>A web interface that helps researchers who are running statistical models maintain reproducibility in their reporting. The application makes it straightforward to associate analyses with their inputs, version outputs, and organise and distribute everything with a user-friendly front end. It consists of a Spring Boot/Kotlin web server and Vue/TypeScript front end, and interacts with an R package called Orderly.</p>
-                    <p onClick={this.company6Click}>Back</p>
+                    <p><img className="projectImage" alt="orderlyweb" src="./../assets/orderlyweb.jpeg" style={{ height: '280px', borderRadius: '25px', border: 'white 5px solid' }}/></p>
+                    <p onClick={this.company6Click} className="underlineHere">Back</p>
                   </div>
                   <div className={company === 1 ? '' : 'wait'}>
                     <h3>Software Engineering Immersive</h3>
